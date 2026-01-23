@@ -1,16 +1,27 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Optional, but recommended for consistent box model */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#container{
+#container {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     margin: 0 auto;
     background-color: #e7e9fd;
 }
 
+header {
+    background-color: #91a7ff;
+    padding: 10px 20px;
+}
+
+
+header h1 {
+    color: rgb(0, 0, 0);
+}
+
+/* (Desktop) */
 header{
     background-color: #91a7ff;
     display: flex;
@@ -27,7 +38,8 @@ ul.menu{
     display: flex;
     justify-content: end;
     align-items: center;
-    color: white;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
 }
 
 .menu li{
@@ -38,6 +50,55 @@ ul.menu{
 a{
     text-decoration: none;
 }
+
+/*ขีดโมบาย*/
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: rgb(0, 0, 0);
+    margin: 4px 0;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: flex;
+        justify-content: flex-end;
+        align-items: end;
+    }
+
+    .menu {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: white;
+        flex-direction: column;
+        width: 200px;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        display: none;
+        border-radius: 8px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu li a {
+        color: #333;
+        padding: 10px 0;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+}
+
 
 #hello{
     padding: 30px;
